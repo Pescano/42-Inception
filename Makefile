@@ -6,7 +6,7 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/06 14:58:51 by paescano          #+#    #+#              #
-#    Updated: 2024/03/07 12:08:52 by paescano         ###   ########.fr        #
+#    Updated: 2024/03/07 17:59:31 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ C = \033[36m
 X = \033[0m
 
 #docker-compose file
-DCFILE=./srcs/docker-compose.yml
+DCFILE=srcs/docker-compose.yml
 #user
 USER=paescano
 

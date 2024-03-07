@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  mariadb:
+    container_name: MariaDB
+    networks:
+      - inception_network
+    build:
+      context: requirements/mariadb
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - mariadb:/var/lib/mysql
+    restart: on-failure
+    expose:
+      - "3306"
+
+volumes:
+  mariadb:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '${PWD}/data/mariadb'
+
+networks:
+  inception_network:
+    driver: bridge
