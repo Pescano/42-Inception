@@ -6,7 +6,7 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/06 14:58:51 by paescano          #+#    #+#              #
-#    Updated: 2024/03/06 17:26:47 by paescano         ###   ########.fr        #
+#    Updated: 2024/03/07 12:08:52 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ all : credit build run
 
 build :
 	@echo "$(Y)███████████████████ Making Inception Containers ████████████████████$(X)"
-	@mkdir -p /home/$(USER)/data/wordpress /home/$(USER)/data/mariadb
+	@test -d /home/$(USER)/data/wordpress || mkdir -p /home/$(USER)/data/wordpress
+	@test -d /home/$(USER)/data/mariadb || mkdir -p /home/$(USER)/data/mariadb
 	@docker-compose -f $(DCFILE) build
 	@echo "$(G)█████████████████████ Build Inception is DONE ██████████████████████$(X)"
 
@@ -64,7 +65,7 @@ credit:
 	@echo "$(P)██║██║ ╚████║╚██████╗███████╗██║        ██║   ██║╚██████╔╝██║ ╚████║$(X)"
 	@echo "$(G)╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝$(X)"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "━━━━━━━━━━━━━━━━━━━┃ $(Y)         paescano         $(X) ┃━━━━━━━━━━━━━━━━━━━"
+	@echo "━━━━━━━━━━━━━━━━━━━┃          $(R)pa$(Y)e$(C)s$(B)c$(P)a$(G)no         $(X) ┃━━━━━━━━━━━━━━━━━━━"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 .PHONY: all build run stop down clean re rec
