@@ -10,6 +10,4 @@ RUN chmod +x /init.sh
 
 EXPOSE 3306
 
-RUN /init.sh
-
-CMD ["mysqld"]
+ENTRYPOINT ["/init.sh"]
