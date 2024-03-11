@@ -8,6 +8,8 @@ COPY ./tools/init.sh /
 
 RUN chmod +x /init.sh
 
+RUN service mariadb start
+
 EXPOSE 3306
 
-ENTRYPOINT ["/init.sh"]
+CMD ["/init.sh"]
